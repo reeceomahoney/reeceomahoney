@@ -15,7 +15,7 @@ export default function HomePage() {
           />
         </div>
         <div>
-          <h1 className="mb-4 text-4xl font-bold">Reece O'mahoney</h1>
+          <h1 className="mb-4 text-4xl font-bold">Reece O&apos;mahoney</h1>
           <div className="text-lg">
             PhD Student @ University of Oxford
             <br />
@@ -27,12 +27,12 @@ export default function HomePage() {
       <section className="mb-12">
         <h2 className="mb-4 text-2xl font-bold">About Me</h2>
         <p className="leading-relaxed">
-          Hello! I'm Reece. I'm a PhD student at the University of Oxford, where
-          I'm a member of the Oxford Robotics Institute. I'm interested in the
-          intersection of machine learning and robotics, and I'm currently
-          working on applying diffusion models to robotic locomotion and
-          manipulation. In my spare time I enjoy powerlifting, travelling, and
-          playing chess.
+          Hello! I&apos;m Reece. I&apos;m a PhD student at the University of
+          Oxford, where I&apos;m a member of the Oxford Robotics Institute.
+          I&apos;m interested in the intersection of machine learning and
+          robotics, and I&apos;m currently working on applying diffusion models
+          to robotic locomotion and manipulation. In my spare time I enjoy
+          powerlifting, travelling, and playing chess.
         </p>
       </section>
 
