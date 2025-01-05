@@ -23,7 +23,7 @@ export default async function Page({
           day: "numeric",
         })}
       </p>
-      <div className="space-y-12 prose prose-h1:text-2xl">
+      <div className="space-y-12 prose prose-h1:text-2xl dark:prose-invert">
         <Post />
       </div>
     </div>

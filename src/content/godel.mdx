@@ -1,11 +1,17 @@
+import BlogImage from '@/components/blog-image'
+
 export const metadata = {
   title: "Gödel's incompleteness theorem and the limits of consciousness",
   date: new Date("2021-08-26"),
   tags: ["Philosophy", "Maths"]
 };
+export const imagePath = "/blog/godel";
 
-![Waterfall (1961) - MC Escher](../../assets/godel/waterfall.jpeg)
-_Waterfall (1961) - MC Escher_
+
+<BlogImage 
+  src="/blog/godel/waterfall.jpeg"
+  caption="Waterfall (1961) - MC Escher"
+/>
 
 # Introduction
 
@@ -17,8 +23,10 @@ I was inspired to write this article after reading Douglas Hofstadter's 1979 Pul
 
 ## The state of mathematics
 
-![Kurt Gödel](../../assets/godel/godel.webp)
-_Kurt Gödel_
+<BlogImage 
+  src="/blog/godel/godel.webp"
+  caption="Kurt Gödel"
+/>
 
 To understand the motivation behind the efforts of Kurt Gödel, it would be prudent to first have a look at the intellectual climate in the years preceding the publication of his theory in 1931. The 19th century saw leaps and bounds in the field of mathematics and the 20th was in no rush to decelerate this trend. At the turn of the century, formalised systems of mathematics and logic were becoming increasingly popular, and also increasingly powerful. There was an optimistic belief that if we could perfectly formalise mathematics, with number theory at its core, we would be able to gain a complete and perfect knowledge of the field, in effect, ending the study of it. As a point of clarification, number theory is simply the branch of mathematics that deals with propositions about the naturals number i.e. 0, 1, 2, 3, etc. Statements such as '6 is an even number', '5 squared equals 25', and 'There are infinite prime numbers' would all belong to number theory. While this may seem like a trivial subject matter for the minds of professional mathematicians, there are still many simply stated number-theoretical problems that have remained unsolved after hundreds of years. Two of the most famous of these are Goldbach's conjecture, which can be stated as follows:
 
@@ -36,8 +44,10 @@ Both of these results have been verified up to exceedingly large numbers, but as
 
 Why are these desirable qualifications? Imagine some system of number theory that is both consistent and complete. If we are given any number-theoretical proposition, such as the two mentioned above, to verify whether it is true or not, we would no longer need to leverage the minds of mathematicians, but rather merely beseech our formal system, like the oracle at Delphi, if a valid derivation for that statement exists. If it does that statement is true, if it doesn't, it is false. End of discussion. Conversely, we could say the following: if we possessed such a system and left a computer with a knowledge of its rules and restrictions to churn out theorems, we would produce an exhaustive, albeit infinite, list of all true statements of number theory. Needless to say, it is understandable why some of the greatest minds of the generation, Gödel being one of them, made this herculean effort their lives work. Despite the inevitable result of this being lines of mathematicians at the job centre, many had an incurably optimistic view of a future in which we possessed such a tool. They believed humanity would enjoy a new-found power and wisdom from being the proprietors of the ultimate arbiter of truth. Given the still logically ambiguous world, we inhabit today, you might've guessed that this pursuit turned out to be chimeric, and the knockout blow was to be delivered by Kurt Gödel and his eponymous theorem.
 
-![Bertrand Russell](../../assets/godel/russell.jpeg)
-_Bertrand Russell_
+<BlogImage 
+  src="/blog/godel/russell.jpeg"
+  caption="Bertrand Russell"
+/>
 
 In the championship match for completeness, Gödel's chief opponent was Bertrand Russell, one of the towering intellects of the 20th century and co-author of the three-volume work 'Principia Mathematica', whose final volume was published in 1913. PM was a mammoth effort between himself and Alfred North Whitehead to create a formal system of unprecedented scope and power that, at least they presumed, was to be the last we'd ever need. PM's predecessors had been plagued with logical inconsistencies which, at least in Russell's view, were all rooted in the issue of self-reference, or in other words, the ability for a system to talk about itself. This is an idea at the heart of Gödel's construction that we will revisit at numerous points throughout this essay. The simplest self-referential paradox that we can discuss is known as the Epimenides paradox which can be stated simply as:
 
@@ -47,8 +57,10 @@ A few moments of thought should provide some elucidation as to why this proposit
 
 ## What makes a formal system?
 
-![Euclid](../../assets/godel/euclid.webp)
-_Euclid_
+<BlogImage 
+  src="/blog/godel/euclid.webp"
+  caption="Euclid"
+/>
 
 We have used the term 'formal system' very loosely up until now, and while you may have developed an intuitive sense for what it would contain, a more rigorous definition is needed to make sense of the later points in our discussion. The two key components that we need to understand are axioms and typographical rules. Firstly, an axiom is any proposition that you assume to be true within your system. This assumption of truth might seem antithetical to the spirit of a formal system, but for a host of reasons that would take another article to discuss, it isn't logically possible to generate statements that we can say are unequivocally true. It may seem like accepting this fact would kill our hopes of creating a truthful formal system before we're even out of the gate, but looking at what typically passes for axiomatic truth will ease these fears a little. The oldest formal system is Euclid's geometry, of which the five axioms are as follows:
 
@@ -62,8 +74,10 @@ Each of these is something which we 'feel' is intuitively, almost self-evidently
 
 The second element of import is the system's typographical rules. These are simply the set of logical operations that you are allowed to perform on the elements of your system. In the case of Euclid's system, this would include something like drawing a line between two points or constructing a circle centred at some point. However, the systems that we will be working with, something which will be explained in more detail shortly, are made up of typographical symbols, as opposed to abstract elements like lines and points. As such, a more representative idea of what our operations will look like are things like the AND/OR/NOT logical operations, addition, subtraction, and a host of what are known as qualifiers.
 
-![Mosaic II (1957) - MC Escher](../../assets/godel/mosaic.jpg)
-_Mosaic II (1957) - MC Escher_
+<BlogImage 
+  src="/blog/godel/mosaic.jpg"
+  caption="Mosaic II (1957) - MC Escher"
+/>
 
 While Gödel used PM as the basis for his original construction, we will be using a much simpler system known as typographical number theory or TNT, developed by Douglas Hofstadter, for ours. TNT contains the minimum amount of expressive power needed to apply Gödel's trick, and as such we can say that the same results can be applied to any system of an equal or greater expressive power, a class to which PM and many others belong. A more detailed explanation of the system can be read <a href="https://cs.lmu.edu/~ray/notes/tnt/">here</a>, but a full understanding isn't necessary to grasp the conclusion. To allow us to get a taste of what actual strings of TNT look like, let's quickly go over two examples.
 
@@ -93,8 +107,10 @@ How do we know this string is true? Let's first assume that it is false. If this
 
 ## Gödel numbering
 
-![Drawing hands (1948) - MC Escher](../../assets/godel/drawing-hands.jpeg)
-_Drawing hands (1948) - MC Escher_
+<BlogImage 
+  src="/blog/godel/drawing-hands.jpeg"
+  caption="Drawing hands (1948) - MC Escher"
+/>
 
 The process of Gödel numbering a formal system can be understood simply as the following:
 
@@ -104,8 +120,10 @@ Just from this definition alone, it is by no means obvious how we arrive at Göd
 
 To begin with, imagine staring into the mirror and noting what the reflection of each object in the room looks like. Apart from things being flipped left to right, they are almost entirely identical. We could say that there exists a rather trivial mapping (we can use this term interchangeably with transformation) between objects in the real world and their image in the mirror world. This mapping constitutes the basis of a simple isomorphism. In this instance we know information is preserved perfectly because, given a full inspection of some object in the mirror world, it would be fairly straightforward to construct its counterpart in the real world and vice versa. A slightly more complex isomorphism, with a much closer resemblance to Gödel numbering, is the mapping discovered by Descartes between lines on a coordinate grid and polynomial equations. This is an idea encountered so frequently during one's secondary maths education that one starts to become blind to its true nature, but it is indeed just another mapping between two spaces. In this case, the information preserving test is the fact that we can find an equation from a line's intersections with the x-axis and equivalently draw a line from the roots of its corresponding polynomial. Now that we've developed our intuition as to what constitutes an isomorphism, it is time we move onto our next key idea, metalanguages.
 
-![Day and night (1938) - MC Escher](../../assets/godel/day-and-night.jpg)
-_Day and night (1938) - MC Escher_
+<BlogImage 
+  src="/blog/godel/day-and-night.jpg"
+  caption="Day and night (1938) - MC Escher"
+/>
 
 As we discussed earlier, mathematicians are interested in studying the systems used to talk about objects as well as the objects themselves. To talk about objects (numbers), you require a language (TNT), but in order to talk about the system itself, you require what's called a metalanguage. This is a concept that seems very foreign to us at first as natural languages, like English, contain their own metalanguage. That is to say, if I wanted to talk about a word itself as opposed to the object it describes, I don't have to switch to 'meta-English', but I can just simply write something like 'The word “house” has five letters'. Note I am not talking about the properties of houses, but of the word “house” itself. It is a direct result of this fact that natural languages contain their metalanguages that allows inconsistencies like the Epimenides paradox to arise. Conversely, we wouldn't view formal systems as having this property, as if I wanted to discuss the fact that 'String X is not a theorem of TNT', I have to make this proposition in the meta-language, English, as opposed to the language, TNT.
 
@@ -158,8 +176,10 @@ These two ideas combined with a few qualifiers form the pieces from which Gödel
 
 ## How does this hurt consistency?
 
-![Relativity (1953) - MC Escher](../../assets/godel/relativity.jpeg)
-_Relativity (1953) - MC Escher_
+<BlogImage 
+  src="/blog/godel/relativity.jpeg"
+  caption="Relativity (1953) - MC Escher"
+/>
 
 A similar argument to the one used above can also be applied to show that it is impossible to prove a system's consistency from within the system, that is, to be sure that it can't produce two contradictory statements, x and ~x. What Gödel shows is that this claim is equivalent to stating that a single sentence of TNT (for example ~0 = 0) is a non-theorem. By another lengthy construction we can show that as long as TNT is consistent, it cannot express this 'oath of consistency', and worse still, this is only possible if TNT is in fact inconsistent! Proving a system's consistency from outside the system doesn't improve this problem either, as this proof must be constructed inside of yet another whose consistency is just as unprovable from within itself. This process can be continued ad infinitum and get no closer to absolute truth. To sum, Gödel's method of proof has allowed us to demonstrate two facts:
 
@@ -176,8 +196,10 @@ Let's begin digging deeper into a phrase we've used fairly liberally up to this 
 
 Our second criticism might have seemed obvious to anyone comfortable with the idea of axioms and can be summed up as 'Why don't we just add G as another axiom in our systems?'. Again, this may seem like a silver bullet to our claims of incompleteness, but all this does is simply kick the can down the road. Once we are familiar with the original procedure, it's fairly trivial to express 'This string is not a theorem of X', where instead of 'X' being 'TNT' it's now 'TNT+G'. The key to this is changing the section of Gödel's string concerned with stating whether some string is a valid derivation of another. This same process can be repeated ad infinitum, constantly allowing us to poke new holes in our system right after patching up previous ones. Because of this, we can say that formal systems of number theory are not just incomplete, but essentially incomplete, that is no alteration to their structure (that doesn't diminish expressive power) can ever make them immune to 'Gödelization'.
 
-![Other world (1947) - MC Escher](../../assets/godel/other-world.jpeg)
-_Other world (1947) - MC Escher_
+<BlogImage 
+  src="/blog/godel/other-world.jpeg"
+  caption="Other world (1947) - MC Escher"
+/>
 
 The last criticism is hard to put into words but follows along the lines of 'Just because we've used Gödel numbering and created this mapping, why does this necessarily imply any notion of 'meaning' should be translated along with it?'. Another way we might look at this is by asking 'Was TNT incomplete before we discovered its Gödel numbering or are we simply unearthing an intrinsic 'fact' about the system that would have existed with or without us?'. This is the mathematical equivalent of the old question about the tree falling in the woods. I think all concerns of this variety can be broadly summarised by the question 'Are abstractions real?'. This is more a question of the philosophy of mathematics than anything particularly novel that Gödel has done and is ultimately rooted in our acceptance of what is connoted by an isomorphism. While this assumption may seem dubious here, the idea of 'translating meaning between spaces' is something that doesn't seem so unacceptable in the previously mentioned example of the cartesian isomorphism between lines and equations. Most of us probably never sought to question the deeper 'why' that allows us to know the properties of an unseen line from facts about a seemingly unrelated string of symbols. The correspondence was presented to us in a tone of such self-evidence, and equally comprehended as such, that it was a question that seemed too trivial to be worth asking. This kind of uncomfortable feeling about the deeper 'trustworthiness' of mathematics has a similar tone to that of axiomatic truth &#8212; deep down we feel it to be true, but we can't express why. I think the only resolution that we can find here lies in a reinterpretation of what we're implying when we say one statement is meaningful and another is meaningless. I propose the following definition provided by Douglas Hofstadter:
 
@@ -189,12 +211,12 @@ This concludes Part I, along with the majority of the mathematically dense ideas
 
 # Part II
 
----
-
 ## We are self-referencing systems
 
-![Hand with reflecting sphere (1935) - MC Escher](../../assets/godel/sphere.jpg)
-_Hand with reflecting sphere (1935) - MC Escher_
+<BlogImage 
+  src="/blog/godel/sphere.jpg"
+  caption="Hand with reflecting sphere (1935) - MC Escher"
+/>
 
 Consciousness is a fairly ill-defined property. While we believe animals are the only configurations of matter that exhibit it, we are none the wiser as to what point on the phylogenetic tree we can say things begin to be conscious. However, I know of no apparent reason why the transition to consciousness ought to be a continuous one. Perhaps once some condition analogous to 'general recursive' is met within any information processing system, it experiences a discrete jump to the particular variety of consciousness we're familiar with. There may even exist more, infinitely more complex conditions that if obtained push a system up to the 'next level' of conscious experience &#8212; I see no reason for the process to have some predetermine ceiling. In contrast to this view, there is a school of thought known as panpsychism whose proponents believe consciousness to be a pervasive property of all matter, just in varying degrees. While this is an interesting idea it is largely unfalsifiable and as such is not the most fruitful subject of discussion. While consciousness is a phenomenon that we are all intimately acquainted with, in fact by definition conscious experience is the only thing we can 'be aware of' so to say, we scarcely understand it. Most of the challenges with understanding it can be tied to the fact that uniquely, among all fields of study, we are both subject and object. In other words, the study of consciousness is equivalent to a system attempting to make self-referential statements. Perhaps this link might be a clue to at least part of the puzzle. What to us feels like consciousness, might be, like incompleteness, an emergent consequence of a systems self-referential nature. However, despite all this, the one, or possibly even (in faith with the Cartesian tradition) the only thing we can be sure of is that we are conscious. Cogito ergo sum, and thus if we have any pride in our claims to be scientists, philosophers, and even human beings, consciousness perhaps more than anything, ought to be something we are striving to understand.
 
@@ -202,8 +224,10 @@ Consciousness is a fairly ill-defined property. While we believe animals are the
 
 At the heart of understanding TNT's self-referential nature, and thus the construction of Gödel's string was the isomorphism we identified between typographical symbols and numbers. It is important to understand that it is not all isomorphisms that would've brought about this property but only the particular class that we employed here, that being a mapping between a system's language and its subject matter. Say if we had instead mapped typographical symbols to different types of pasta our dreams of completeness would still yet be alive. It is only because Gödel numbering is an example of a 'language-subject' mapping that our system looped back around on itself like the Ouroboros. This insight naturally leads us to ask, that if this is this is the mapping that allows a system to become self-referential, what is the analogous isomorphism that allows us to self-reference. In other words, what is the equivalent 'Gödel numbering' of consciousness? It is difficult to say whether the primary subject matter of consciousness is reality or the abstractions that we use to describe it or even whether the notion of a 'primary subject matter' is a meaningful statement to make. As for the typographical language in which consciousness is expressed, the jury is also out. There is ample evidence for certain regions of the brain being responsible for different tasks, but on a neuron level, we are none the wiser as to where individual 'symbols' seem to be stored, if anywhere at all. By all accounts, the notion of symbols and ideas appear to be an emergent property of the lower-level behaviour of our brains that we haven't quite pinned down. While there are still many questions for us left to answer, it is not unimaginable that discovering the ideas behind this isomorphism will be one of the keys to developing a more complete theory of consciousness. Whether we will embrace this newfound knowledge with wisdom and maturity, or simply retreat into superstition and ignorance is another matter, but I am optimistic about the better angels of our nature.
 
-![The Ouroboros](../../assets/godel/ouroboros.jpeg)
-_The Ouroboros_
+<BlogImage 
+  src="/blog/godel/ouroboros.jpeg"
+  caption="The Ouroboros"
+/>
 
 Another interesting extension of this Gödelian analogy is (assuming our minds obey the same underlying principles as any other formal system, a big if that we'll discuss shortly) the question of what it means for our mind to be 'incomplete'. If we consider the closest analogy, perhaps there are truths that we are fundamentally incapable of grasping, not out of dogmatic denial, but simply fundamental 'blind spots' in our cognition. Another interesting but much more speculative idea is the possibility of states of consciousness that can be understood in theory, but not physically rendered in our minds, like four-dimensional space. While cybernetic enhancement may expand these capabilities, the equivalent 'TNT+G' of consciousness would fall victim to the same infinite regression we demonstrated earlier, always leaving a 'complete' consciousness experience beyond our reach. Perhaps this 'complete consciousness' is what is alluded to in the teachings of mystic religions like Buddhism, but if this is an unreachable goal what does that mean for us? Taking these ideas even further, what is the equivalent 'Gödel's string' of consciousness? Hofstadter plays with this idea in another one of his books titled 'I am a strange loop' in which a group of researchers discover a sentence that instantly puts anyone who reads it into a coma and subsequently run into a fair bit of trouble trying to contain it.
 
@@ -211,8 +235,10 @@ If our minds do operate on the same underlying principles as any other formal sy
 
 ## Is creativity computation
 
-![Band of union (1956) - MC Escher](../../assets/godel/band-of-union.jpg)
-_Band of union (1956) - MC Escher_
+<BlogImage 
+  src="/blog/godel/band-of-union.jpg"
+  caption="Band of union (1956) - MC Escher"
+/>
 
 To say that we are at the 'authors' of the ideas that come to us in flashes of creative insight almost doesn't feel right. With no extra amount of, at least conscious, effort dedicated towards a problem, a solution often presents itself to us 'out of the blue'. While this isn't an explicit indication of any extra-computational processes occurring in our minds, it is at least obvious that simply simulating what we know is going on won't be enough to capture the full richness of our minds. The general principle that all modern machine learning algorithms follow is essential to train a large inductive reasoning system that, given enough prior examples, can isolate and interpolate between relevant features and apply this knowledge to future examples. However, because of the work of philosophers like Hume and Popper, we know that the assumption that new human knowledge is reasoned inductively from prior experience is not a logically consistent theory. This fact seems to be most clearly highlighted to us in the explanatory power of new scientific theories: the precision to which Newton's laws allowed us to predict the orbits of the planets was orders of magnitude greater than the resolution of the data which he had at his disposal to devise them. But where did this extra information come from? At present, something akin to creatio ex nihilo seems to be our best explanation. Maybe we may be able to model this process computationally, but a simple extrapolation of our current approaches will likely never gain this 'creative spark'. We require something entirely new to reach beyond inductive reasoning. However all this being said, the problem of consciousness by no means strikes me as insoluble, and I feel quite confident that one day we will have a working theory of consciousness that doesn't just expand our insight into our minds but also a greater understanding of the nature of information and grander part it plays in the cosmic dance.
 
