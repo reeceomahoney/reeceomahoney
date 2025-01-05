@@ -11,7 +11,7 @@ export default function PublicationsPage() {
           alt="Locodiff"
           width={300}
           height={300}
-          className="rounded-lg"
+          className="rounded-lg shadow-lg drop-shadow-lg"
         />
         <div>
           <Link href="https://arxiv-library.vercel.app/" className="hover:text-blue-500">

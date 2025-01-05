@@ -11,7 +11,7 @@ export default function HomePage() {
             alt="Reece O'mahoney"
             width={300}
             height={300}
-            className="rounded-full object-cover shadow-lg"
+            className="rounded-full object-cover shadow-lg drop-shadow-lg"
           />
         </div>
         <div>
