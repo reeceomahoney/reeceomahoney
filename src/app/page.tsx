@@ -28,7 +28,7 @@ export default function HomePage() {
         <h2 className="mb-4 text-2xl font-bold">About Me</h2>
         <p className="leading-relaxed">
           Hello! I&apos;m Reece. I&apos;m a PhD student at the University of
-          Oxford within Robotics Institute. I&apos;m interested in the
+          Oxford within the Robotics Institute. I&apos;m interested in the
           intersection of machine learning and robotics, and I&apos;m currently
           working on applying diffusion models to quadrupedal locomotion and
           manipulation. In addition to my PhD I also do freelance web
