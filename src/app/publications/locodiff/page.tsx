@@ -2,20 +2,20 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <div className="mx-auto mt-12 mb-24 max-w-3xl space-y-12 text-center">
+    <div className="mx-4 mb-24 mt-12 max-w-3xl space-y-12 px-4 text-center md:mx-auto md:px-0">
       <div>
-        <h1 className="mb-4 text-6xl font-bold">
+        <h1 className="mb-4 text-4xl font-bold md:text-6xl">
           Offline Adaptation of Quadruped Locomotion using Diffusion Models
         </h1>
-        <p className="mb-2 text-xl">
-          Reece O’Mahoney, Alexander L. Mitchell, Wanming Yu, Ingmar Posner,
+        <p className="mb-2 text-lg md:text-xl">
+          Reece O&pos;Mahoney, Alexander L. Mitchell, Wanming Yu, Ingmar Posner,
           Ioannis Havoutis
         </p>
         <p>Oxford Robotics Institute, University of Oxford</p>
       </div>
 
       <div className="flex justify-center gap-4">
-        <button className="rounded-3xl bg-gray-800 px-6 py-2 text-white hover:bg-gray-700">
+        <button className="rounded-3xl bg-gray-800 px-4 py-2 text-white hover:bg-gray-700 md:px-6">
           <a
             href="https://arxiv.org/abs/2411.08832"
             className="flex items-center gap-2"
@@ -29,7 +29,7 @@ export default function Page() {
             Paper
           </a>
         </button>
-        <button className="rounded-3xl bg-gray-800 px-6 py-2 text-white hover:bg-gray-700">
+        <button className="rounded-3xl bg-gray-800 px-4 py-2 text-white hover:bg-gray-700 md:px-6">
           <a
             href="https://github.com/reeceomahoney/locodiff"
             className="flex items-center gap-2"
@@ -47,36 +47,36 @@ export default function Page() {
 
       <iframe
         src="https://www.youtube.com/embed/HCrITc8e1Zs"
-        className="h-[432px] w-full shadow-lg"
+        className="h-[200px] w-full shadow-lg md:h-[432px]"
       ></iframe>
 
       <section className="space-y-8">
-        <h2 className="text-4xl font-semibold">Abstract</h2>
-        <p className="leading-relaxed">
+        <h2 className="text-3xl font-semibold md:text-4xl">Abstract</h2>
+        <p className="text-left leading-relaxed">
           We present a diffusion-based approach to quadrupedal locomotion that
           simultaneously addresses the limitations of learning and interpolating
           between multiple skills (modes) and of offline adapting to new
           locomotion behaviours after training. This is the first framework to
-          apply classNameifier-free guided diffusion to quadruped locomotion and
+          apply classifier-free guided diffusion to quadruped locomotion and
           demonstrate its efficacy by extracting goal-conditioned behaviour from
           an originally unlabelled dataset. We show that these capabilities are
           compatible with a multi-skill policy and can be applied with little
           modification and minimal compute overhead, i.e., running entirely on
-          the robot’s onboard CPU. We verify the validity of our approach with
-          hardware experiments on the ANYmal quadruped platform.
+          the robot&pos;s onboard CPU. We verify the validity of our approach
+          with hardware experiments on the ANYmal quadruped platform.
         </p>
       </section>
 
       <section className="space-y-8">
-        <h2 className="text-4xl font-semibold">Approach</h2>
+        <h2 className="text-3xl font-semibold md:text-4xl">Approach</h2>
         <Image
           src="/method.png"
           alt="Method diagram"
           width={800}
           height={600}
-          className="mx-auto w-11/12 shadow-lg"
+          className="mx-auto w-full shadow-lg md:w-11/12"
         />
-        <p className="leading-relaxed">
+        <p className="text-left leading-relaxed">
           Method Overview: a) A reinforcement learning agent is pre-trained with
           a hand crafted policy that generates reference trajectories. These are
           collected by rolling out the policy in an environment with randomised
@@ -88,40 +88,40 @@ export default function Page() {
           conditioning and produces a partially denoised vector. This process is
           repeated N times to produce a complete action trajectory. c) The
           return value is randomly masked during training, allowing us to use
-          classNameifier-free guidance at test time. This is done by taking a
+          classifier-free guidance at test time. This is done by taking a
           weighted sum of unconditional and maximum return trajectories at each
           denoising step.
         </p>
       </section>
 
       <section className="space-y-8">
-        <h2 className="text-4xl font-semibold">Results</h2>
+        <h2 className="text-3xl font-semibold md:text-4xl">Results</h2>
         <Image
           src="/results_1.png"
           alt="Results diagram"
           width={800}
           height={600}
-          className="mx-auto w-11/12 shadow-lg"
+          className="mx-auto w-full shadow-lg md:w-11/12"
         />
-        <p>
-          After training, the model’s outputs are adjusted to recover different
+        <p className="text-left">
+          After training, the model&pos;s outputs are adjusted to recover different
           locomotion behaviours. The table above shows the velocity tracking
           error of policies trained with different target velocities. We compare
           an expert model with access to the ground truth commands to our model
           that has no access to these commands but instead aims to maximise a
-          reward function via classNameifier-free guidance. Our results
-          demonstrate that our method, without access to ground truth commands,
-          can produce comparable velocity tracking to a model that does by using
-          reward guidance.
+          reward function via classifier-free guidance. Our results demonstrate
+          that our method, without access to ground truth commands, can produce
+          comparable velocity tracking to a model that does by using reward
+          guidance.
         </p>
         <Image
           src="/results_2.png"
           alt="Results diagram"
           width={800}
           height={600}
-          className="mx-auto w-11/12 shadow-lg"
+          className="mx-auto w-full shadow-lg md:w-11/12"
         />
-        <p className="leading-relaxed">
+        <p className="text-left leading-relaxed">
           We collect separate datasets generated by walking and crawling
           reinforcement learning policies with no transitions present between
           the two. Our model was able to learn interpolations between these two

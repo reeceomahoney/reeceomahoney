@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="ml-16 max-w-3xl py-12">
+    <div className="mx-4 max-w-3xl py-12 md:ml-16">
       <div className="mb-12 flex flex-col items-center gap-8 md:flex-row">
         <div className="h-48 w-48 flex-shrink-0 md:h-64 md:w-64">
           <Image
@@ -12,9 +12,10 @@ export default function HomePage() {
             width={300}
             height={300}
             className="rounded-full object-cover shadow-lg drop-shadow-lg"
+            priority
           />
         </div>
-        <div>
+        <div className="text-center md:text-left">
           <h1 className="mb-4 text-4xl font-bold">Reece O&apos;mahoney</h1>
           <div className="text-lg">
             PhD Student @ University of Oxford

@@ -5,7 +5,7 @@ export default async function BlogPage() {
   const posts = await getBlogPosts();
 
   return (
-    <div className="ml-16 max-w-3xl">
+    <div className="mx-4 max-w-3xl md:ml-16">
       <h1 className="pb-8 text-3xl font-bold">Blog</h1>
       <div className="space-y-8">
         {posts.map((post) => (

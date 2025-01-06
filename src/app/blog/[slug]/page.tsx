@@ -14,7 +14,7 @@ export default async function Page({
   };
 
   return (
-    <div className="ml-16 max-w-3xl space-y-6 mb-24">
+    <div className="mx-4 max-w-3xl space-y-6 md:ml-16">
       <h1 className="text-3xl font-bold">{metadata.title}</h1>
       <p className="text-lg">
         {metadata.date.toLocaleDateString("en-US", {
@@ -23,7 +23,7 @@ export default async function Page({
           day: "numeric",
         })}
       </p>
-      <div className="space-y-12 prose prose-h1:text-2xl dark:prose-invert">
+      <div className="prose space-y-12 dark:prose-invert prose-h1:text-2xl">
         <Post />
       </div>
     </div>
