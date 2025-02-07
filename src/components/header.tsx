@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="px-4 md:container md:mx-16 md:px-0">
+      <header className="px-4 md:mx-16 md:px-0">
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center md:justify-between">
           <div className="flex items-end gap-16">

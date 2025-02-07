@@ -19,7 +19,7 @@ export default function PublicationsPage() {
               Offline Adaptation of Quadruped Locomotion using Diffusion Models
             </h2>
           </Link>
-          <h3>[Submitted ICRA 2025]</h3>
+          <h3>[Accepted ICRA 2025]</h3>
         </div>
       </div>
     </div>

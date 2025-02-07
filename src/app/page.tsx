@@ -103,8 +103,8 @@ export default function HomePage() {
               </li>
               <li>
                 Subject matter expert on diffusion models, including their
-                application to robotics and control systems with a paper
-                submitted to ICRA 2025 currently under review.
+                application to robotics and control systems with a publication
+                accepted to ICRA 2025.
               </li>
             </ul>
           </div>
