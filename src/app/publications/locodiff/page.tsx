@@ -8,7 +8,7 @@ export default function Page() {
           Offline Adaptation of Quadruped Locomotion using Diffusion Models
         </h1>
         <p className="mb-2 text-lg md:text-xl">
-          Reece O'Mahoney, Alexander L. Mitchell, Wanming Yu, Ingmar Posner,
+          Reece O&apos;Mahoney, Alexander L. Mitchell, Wanming Yu, Ingmar Posner,
           Ioannis Havoutis
         </p>
         <p>Oxford Robotics Institute, University of Oxford</p>
