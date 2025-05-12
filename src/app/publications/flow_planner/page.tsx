@@ -5,12 +5,10 @@ export default function Page() {
     <div className="mx-4 mb-24 mt-12 max-w-3xl space-y-12 px-4 text-center md:mx-auto md:px-0">
       <div>
         <h1 className="mb-4 text-4xl font-bold md:text-6xl">
-          Offline Adaptation of Quadruped Locomotion using Diffusion Models
+          Improving Trajectory Stitching with Flow Models
         </h1>
         <p className="mb-2 text-lg md:text-xl">
-          Reece O&apos;Mahoney, Alexander L. Mitchell, Wanming Yu, <br />
-          Ingmar Posner, Ioannis Havoutis
-        </p>
+          Reece O&pos;Mahoney, Wanming Yu, Ioannis Havoutis</p>
         <p>Oxford Robotics Institute, University of Oxford</p>
       </div>
 
