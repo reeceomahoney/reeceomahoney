@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+export const metadata = {
+  title: "Offline Adaptation of Quadruped Locomotion using Diffusion Models",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
+};
+
 export default function Page() {
   return (
     <div className="mx-4 mb-24 mt-12 max-w-3xl space-y-12 px-4 text-center md:mx-auto md:px-0">
