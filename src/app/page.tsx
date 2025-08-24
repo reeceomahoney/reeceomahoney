@@ -44,8 +44,12 @@ export default function HomePage() {
         <h2 className="mb-4 text-2xl font-bold">Work Experience</h2>
         <div className="space-y-4">
           <div>
+            <h3 className="text-lg font-semibold">Machine Learning Engineer - Kinisi Robotics</h3>
+            <p className="text-sm text-gray-600">July 2025 - Present</p>
+          </div>
+          <div>
             <h3 className="text-lg font-semibold">Freelance Web Developer</h3>
-            <p className="text-sm text-gray-600">December 2024 - Present</p>
+            <p className="text-sm text-gray-600">December 2024 - July 2025</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold">
@@ -57,7 +61,7 @@ export default function HomePage() {
             <h3 className="text-lg font-semibold">
               Undergraduate Tutor - University of Oxford
             </h3>
-            <p className="text-sm text-gray-600">October 2023 - Present</p>
+            <p className="text-sm text-gray-600">October 2023 - July 2025</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold">Private Tutor</h3>
