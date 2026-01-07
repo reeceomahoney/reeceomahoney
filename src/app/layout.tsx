@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import "katex/dist/katex.min.css";
 
+import { Analytics } from "@vercel/analytics/next";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -30,6 +31,7 @@ export default function RootLayout({
           <Header />
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
