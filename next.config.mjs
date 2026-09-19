@@ -1,16 +1,15 @@
 import createMDX from "@next/mdx";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 
+// Plugins are referenced by name so the config stays serializable for Turbopack.
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    remarkPlugins: ["remark-math"],
+    rehypePlugins: ["rehype-katex"],
   },
 });
 
