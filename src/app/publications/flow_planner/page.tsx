@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="mx-4 mb-24 mt-12 max-w-3xl space-y-12 px-4 text-center md:mx-auto md:px-0">
+    <div className="mx-4 mt-12 mb-24 max-w-3xl space-y-12 px-4 text-center md:mx-auto md:px-0">
       <div>
         <h1 className="mb-4 text-4xl font-bold md:text-6xl">
           Improving Trajectory Stitching with Flow Models

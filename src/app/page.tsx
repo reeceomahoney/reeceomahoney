@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="mx-4 max-w-3xl py-12 md:ml-16">
       <div className="mb-12 flex flex-col items-center gap-8 md:flex-row">
-        <div className="h-48 w-48 flex-shrink-0 md:h-64 md:w-64">
+        <div className="h-48 w-48 shrink-0 md:h-64 md:w-64">
           <Image
             src="/profile.jpg"
             alt="Reece O'mahoney"
