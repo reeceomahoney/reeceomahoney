@@ -35,7 +35,7 @@ export default function Page() {
         </button>
         <button className="rounded-3xl bg-gray-800 px-4 py-2 text-white hover:bg-gray-700 md:px-6">
           <a
-            href="https://github.com/reeceomahoney/flow_planning"
+            href="https://github.com/reeceomahoney/flow-planning"
             className="flex items-center gap-2"
           >
             <Image
