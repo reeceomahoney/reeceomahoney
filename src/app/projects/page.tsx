@@ -7,6 +7,27 @@ export default function ProjectsPage() {
       <h1 className="text-3xl font-bold">Projects</h1>
       <div className="flex flex-col items-center gap-4 md:flex-row">
         <Image
+          src="/projects/slurm-tools.png"
+          alt="SLURM Tools"
+          width={300}
+          height={300}
+          className="w-full rounded-lg shadow-lg drop-shadow-lg md:w-auto"
+        />
+        <div className="text-center md:text-left">
+          <Link
+            href="https://github.com/reeceomahoney/slurm-tools"
+            className="hover:text-blue-500"
+          >
+            <h2 className="text-xl font-bold">SLURM Tools</h2>
+          </Link>
+          <h3>
+            CLI for submitting SLURM jobs over SSH and a web GUI for monitoring
+            them across clusters
+          </h3>
+        </div>
+      </div>
+      <div className="flex flex-col items-center gap-4 md:flex-row">
+        <Image
           src="/projects/arxiv-lib.png"
           alt="Arxiv Library"
           width={300}
