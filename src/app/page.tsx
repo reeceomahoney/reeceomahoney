@@ -6,7 +6,7 @@ import { PostList } from "@/components/post-list";
 
 const news = [
   {
-    date: "Sep 20, 2026",
+    date: "Sep 2026",
     text: (
       <>
         Released <Link href="/publications/detaug">DetAug</Link> and{" "}

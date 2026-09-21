@@ -15,12 +15,12 @@
 }
 
 .dark {
-  --bg: #121212;
+  --bg: #1e1e1e;
   --fg: #e8e8e8;
-  --muted: #8f8f8f;
+  --muted: #9a9a9a;
   --link: #8ab4f8;
-  --rule: #2c2c2c;
-  --pill: #1e3a5f;
+  --rule: #3a3a3a;
+  --pill: #24446b;
   --pill-fg: #cfe2ff;
 }
 
