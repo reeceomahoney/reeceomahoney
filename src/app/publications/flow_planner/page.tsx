@@ -25,7 +25,7 @@ export default function Page() {
             className="flex items-center gap-2"
           >
             <Image
-              src="/arxiv-logomark-small.svg"
+              src="/icons/arxiv.svg"
               alt="ArXiv logo"
               width={24}
               height={24}
@@ -39,7 +39,7 @@ export default function Page() {
             className="flex items-center gap-2"
           >
             <Image
-              src="/github-mark-white.svg"
+              src="/icons/github.svg"
               alt="GitHub logo"
               width={24}
               height={24}
@@ -79,7 +79,7 @@ export default function Page() {
         <h2 className="text-3xl font-semibold md:text-4xl">Flow Planner</h2>
         <figure>
           <Image
-            src="/flow_overview.png"
+            src="/publications/flow_planner/overview.png"
             alt="Stitching results"
             width={800}
             height={600}
@@ -136,7 +136,7 @@ export default function Page() {
         </p>
         <figure>
           <Image
-            src="/flow_planner_table_1.png"
+            src="/publications/flow_planner/table_1.png"
             alt="Stitching results"
             width={800}
             height={600}
@@ -148,7 +148,7 @@ export default function Page() {
         </figure>
         <figure>
           <Image
-            src="/flow_planner_table_2.png"
+            src="/publications/flow_planner/table_2.png"
             alt="Stitching results"
             width={800}
             height={600}
@@ -167,7 +167,7 @@ export default function Page() {
 
         <figure>
           <Image
-            src="/obstacle.png"
+            src="/publications/flow_planner/obstacle.png"
             alt="Guided planning results"
             width={800}
             height={600}
@@ -186,7 +186,7 @@ export default function Page() {
         </p>
         <figure>
           <Image
-            src="/hardware.png"
+            src="/publications/flow_planner/hardware.png"
             alt="Stitching results"
             width={800}
             height={600}

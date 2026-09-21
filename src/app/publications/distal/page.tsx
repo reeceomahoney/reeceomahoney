@@ -22,14 +22,14 @@ export default function Page() {
       <div className="flex justify-center gap-4">
         <LinkButton
           href="https://arxiv.org/abs/2609.18392"
-          icon="/arxiv-logomark-small.svg"
+          icon="/icons/arxiv.svg"
           iconAlt="arXiv logo"
         >
           Paper
         </LinkButton>
         <LinkButton
           href="https://github.com/reeceomahoney/distal"
-          icon="/github-mark-white.svg"
+          icon="/icons/github.svg"
           iconAlt="GitHub logo"
         >
           Code
@@ -65,7 +65,7 @@ export default function Page() {
           hardware.
         </p>
         <Figure
-          src="/distal_overview.png"
+          src="/publications/distal/overview.png"
           alt="Overview of DistAL"
           width={2839}
           height={983}
@@ -107,7 +107,7 @@ export default function Page() {
           eventual task success.
         </p>
         <Figure
-          src="/distal_arch.png"
+          src="/publications/distal/arch.png"
           alt="DistAL architecture"
           width={3130}
           height={1421}
@@ -150,7 +150,7 @@ export default function Page() {
           frame.
         </p>
         <Figure
-          src="/distal_rewards.png"
+          src="/publications/distal/rewards.png"
           alt="Per-step rewards along successful and failed rollouts"
           width={3000}
           height={900}
@@ -182,7 +182,7 @@ export default function Page() {
           success modes.
         </p>
         <Figure
-          src="/distal_tasks.png"
+          src="/publications/distal/tasks.png"
           alt="Keyframes of the two bi-manual tasks"
           width={2400}
           height={627}
@@ -190,7 +190,7 @@ export default function Page() {
           caption="Figure 4: Keyframes of the two bi-manual Piper tasks: remove pen lid (top) and remove ethernet cable (bottom)."
         />
         <Figure
-          src="/distal_results.png"
+          src="/publications/distal/results.png"
           alt="Hardware success rates"
           width={3447}
           height={2045}

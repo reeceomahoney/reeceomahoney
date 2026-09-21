@@ -26,7 +26,7 @@ export default function Page() {
             className="flex items-center gap-2"
           >
             <Image
-              src="/arxiv-logomark-small.svg"
+              src="/icons/arxiv.svg"
               alt="ArXiv logo"
               width={24}
               height={24}
@@ -40,7 +40,7 @@ export default function Page() {
             className="flex items-center gap-2"
           >
             <Image
-              src="/github-mark-white.svg"
+              src="/icons/github.svg"
               alt="GitHub logo"
               width={24}
               height={24}
@@ -75,7 +75,7 @@ export default function Page() {
       <section className="space-y-8">
         <h2 className="text-3xl font-semibold md:text-4xl">Approach</h2>
         <Image
-          src="/method.png"
+          src="/publications/locodiff/method.png"
           alt="Method diagram"
           width={800}
           height={600}
@@ -102,7 +102,7 @@ export default function Page() {
       <section className="space-y-8">
         <h2 className="text-3xl font-semibold md:text-4xl">Results</h2>
         <Image
-          src="/results_1.png"
+          src="/publications/locodiff/results_1.png"
           alt="Results diagram"
           width={800}
           height={600}
@@ -120,7 +120,7 @@ export default function Page() {
           reward guidance.
         </p>
         <Image
-          src="/results_2.png"
+          src="/publications/locodiff/results_2.png"
           alt="Results diagram"
           width={800}
           height={600}

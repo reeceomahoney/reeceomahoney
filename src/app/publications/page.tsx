@@ -16,21 +16,21 @@ const publications: Publication[] = [
     authors: "Reece O'Mahoney, Moritz Zoellner, Ioannis Havoutis",
     venue: "arXiv preprint",
     href: "/publications/detaug",
-    image: { src: "/thumbs/detaug.gif", alt: "DetAug" },
+    image: { src: "/publications/detaug/thumb.gif", alt: "DetAug" },
   },
   {
     title: "DistAL: Distance-based Advantage Learning for VLA Fine-Tuning",
     authors: "Reece O'Mahoney, Ioannis Havoutis",
     venue: "arXiv preprint",
     href: "/publications/distal",
-    image: { src: "/thumbs/distal.gif", alt: "DistAL" },
+    image: { src: "/publications/distal/thumb.gif", alt: "DistAL" },
   },
   {
     title: "Improving Trajectory Stitching with Flow Models",
     authors: "Reece O'Mahoney, Wanming Yu, Ioannis Havoutis",
     venue: "arXiv preprint",
     href: "/publications/flow_planner",
-    image: { src: "/thumbs/flow_planner.gif", alt: "Flow Planner" },
+    image: { src: "/publications/flow_planner/thumb.gif", alt: "Flow Planner" },
   },
   {
     title: "Offline Adaptation of Quadruped Locomotion using Diffusion Models",
@@ -39,7 +39,7 @@ const publications: Publication[] = [
     venue:
       "2025 IEEE International Conference on Robotics and Automation (ICRA)",
     href: "/publications/locodiff",
-    image: { src: "/thumbs/locodiff.gif", alt: "Locodiff" },
+    image: { src: "/publications/locodiff/thumb.gif", alt: "Locodiff" },
   },
 ];
 

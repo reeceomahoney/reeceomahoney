@@ -29,14 +29,14 @@ export default function Page() {
       <div className="flex justify-center gap-4">
         <LinkButton
           href="https://arxiv.org/abs/2609.18395"
-          icon="/arxiv-logomark-small.svg"
+          icon="/icons/arxiv.svg"
           iconAlt="arXiv logo"
         >
           Paper
         </LinkButton>
         <LinkButton
           href="https://github.com/reeceomahoney/detaug"
-          icon="/github-mark-white.svg"
+          icon="/icons/github.svg"
           iconAlt="GitHub logo"
         >
           Code
@@ -76,7 +76,7 @@ export default function Page() {
           seeing obstacles in training.
         </p>
         <Figure
-          src="/detaug_teaser.png"
+          src="/publications/detaug/teaser.png"
           alt="DetAug on hardware avoiding an unseen obstacle"
           width={720}
           height={707}
@@ -88,7 +88,7 @@ export default function Page() {
       <section className="space-y-8">
         <h2 className="text-3xl font-semibold md:text-4xl">Method</h2>
         <Figure
-          src="/detaug_overview.png"
+          src="/publications/detaug/overview.png"
           alt="Overview of DetAug"
           width={2274}
           height={652}
@@ -125,7 +125,7 @@ export default function Page() {
           object interaction.
         </p>
         <Figure
-          src="/detaug_trajectories.png"
+          src="/publications/detaug/trajectories.png"
           alt="Example detour augmentations"
           width={1650}
           height={1050}
@@ -235,7 +235,7 @@ export default function Page() {
         </p>
         <div className="grid gap-8 md:grid-cols-2">
           <Figure
-            src="/detaug_selection.png"
+            src="/publications/detaug/selection.png"
             alt="Selection vs guidance results"
             width={1650}
             height={1200}
@@ -243,7 +243,7 @@ export default function Page() {
             caption="Figure 4: Collision-free success on the SafeLIBERO spatial suite for DetAug's label selection against guidance and mixed variants."
           />
           <Figure
-            src="/detaug_ncond.png"
+            src="/publications/detaug/ncond.png"
             alt="Effect of the number of sampled labels"
             width={1650}
             height={950}
@@ -262,7 +262,7 @@ export default function Page() {
           number of training steps.
         </p>
         <Figure
-          src="/detaug_finetune.png"
+          src="/publications/detaug/finetune.png"
           alt="Fine-tuning results"
           width={1650}
           height={1500}
@@ -283,7 +283,7 @@ export default function Page() {
           avoids by construction.
         </p>
         <Figure
-          src="/detaug_hardware.png"
+          src="/publications/detaug/hardware.png"
           alt="Hardware experiments"
           width={1945}
           height={493}

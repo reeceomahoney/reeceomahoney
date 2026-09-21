@@ -7,7 +7,7 @@ export default function ProjectsPage() {
       <h1 className="text-3xl font-bold">Projects</h1>
       <div className="flex flex-col items-center gap-4 md:flex-row">
         <Image
-          src="/arxiv-lib.png"
+          src="/projects/arxiv-lib.png"
           alt="Arxiv Library"
           width={300}
           height={300}
@@ -25,7 +25,7 @@ export default function ProjectsPage() {
       </div>
       <div className="flex flex-col items-center gap-4 md:flex-row">
         <Image
-          src="/le-booking.png"
+          src="/projects/le-booking.png"
           alt="Booking System | Leading Education"
           width={300}
           height={300}
