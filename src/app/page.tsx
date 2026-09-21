@@ -66,7 +66,7 @@ export default function HomePage() {
             <a href="https://ori.ox.ac.uk/">Oxford Robotics Institute</a>,
             University of Oxford. My thesis is on applying diffusion models to
             robotic control. Previously I was a machine learning engineer at{" "}
-            <a href="https://kinisi.ai/">Kinisi Robotics</a>, did freelance
+            Kinisi Robotics, did freelance
             full-stack development, and read Engineering Science at Oxford. I am
             currently trying to improve my handstands and my chess rating.
           </p>
