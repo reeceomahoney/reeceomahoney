@@ -14,19 +14,19 @@ export default async function Page({
   };
 
   return (
-    <div className="mx-4 max-w-3xl space-y-6 md:ml-16">
-      <h1 className="text-3xl font-bold">{metadata.title}</h1>
-      <p className="text-lg">
-        {metadata.date.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
+    <article>
+      <h1 className="text-2xl font-bold">{metadata.title}</h1>
+      <p className="mb-8 text-sm text-muted">
+        {metadata.date.toLocaleDateString("en-GB", {
           day: "numeric",
+          month: "long",
+          year: "numeric",
         })}
       </p>
-      <div className="prose space-y-12 dark:prose-invert prose-h1:text-2xl">
+      <div className="prose max-w-none space-y-10 dark:prose-invert prose-h1:text-xl prose-a:text-link">
         <Post />
       </div>
-    </div>
+    </article>
   );
 }
 

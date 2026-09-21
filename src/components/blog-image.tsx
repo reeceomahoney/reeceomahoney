@@ -8,9 +8,9 @@ export default function BlogImage({
   caption: string;
 }) {
   return (
-    <div>
+    <figure>
       <Image src={src} alt={caption} width={500} height={300} />
-      <figcaption>{caption}</figcaption>
-    </div>
+      <figcaption className="text-sm text-muted">{caption}</figcaption>
+    </figure>
   );
 }

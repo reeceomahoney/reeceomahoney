@@ -33,9 +33,9 @@ export function ModeToggle() {
       onClick={() => setTheme(next)}
       aria-label={`Switch to ${next} theme`}
       title={`Theme: ${current}`}
-      className="ml-8 inline-flex h-9 w-9 items-center justify-center rounded-md border border-slate-300 shadow-xs transition-colors hover:bg-slate-200 focus-visible:ring-1 focus-visible:ring-slate-400 focus-visible:outline-hidden dark:border-slate-700 dark:hover:bg-slate-800"
+      className="inline-flex h-7 w-7 items-center justify-center rounded-md text-muted hover:text-fg focus-visible:ring-1 focus-visible:ring-rule focus-visible:outline-hidden"
     >
-      <Icon className="h-[1.2rem] w-[1.2rem]" />
+      <Icon className="h-4 w-4" />
     </button>
   );
 }

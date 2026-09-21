@@ -6,7 +6,7 @@ export function Figure({
   caption,
   width = 800,
   height = 600,
-  className = "mx-auto w-full shadow-lg md:w-11/12",
+  className = "mx-auto w-full",
 }: {
   src: string;
   alt: string;
@@ -24,7 +24,9 @@ export function Figure({
         height={height}
         className={className}
       />
-      <figcaption className="pt-2 text-sm">{caption}</figcaption>
+      <figcaption className="pt-2 text-left text-sm text-muted">
+        {caption}
+      </figcaption>
     </figure>
   );
 }

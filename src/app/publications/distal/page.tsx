@@ -8,30 +8,18 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="mx-4 mt-12 mb-24 max-w-3xl space-y-12 px-4 text-center md:mx-auto md:px-0">
+    <div className="mt-4 space-y-10 text-center">
       <div>
-        <h1 className="mb-4 text-4xl font-bold md:text-6xl">
+        <h1 className="mb-3 text-2xl font-bold md:text-3xl">
           DistAL: Distance-based Advantage Learning for VLA Fine-Tuning
         </h1>
-        <p className="mb-2 text-lg md:text-xl">
-          Reece O&apos;Mahoney, Ioannis Havoutis
-        </p>
+        <p className="mb-1">Reece O&apos;Mahoney, Ioannis Havoutis</p>
         <p>Oxford Robotics Institute, University of Oxford</p>
       </div>
 
       <div className="flex justify-center gap-4">
-        <LinkButton
-          href="https://arxiv.org/abs/2609.18392"
-          icon="/icons/arxiv.svg"
-          iconAlt="arXiv logo"
-        >
-          Paper
-        </LinkButton>
-        <LinkButton
-          href="https://github.com/reeceomahoney/distal"
-          icon="/icons/github.svg"
-          iconAlt="GitHub logo"
-        >
+        <LinkButton href="https://arxiv.org/abs/2609.18392">Paper</LinkButton>
+        <LinkButton href="https://github.com/reeceomahoney/distal">
           Code
         </LinkButton>
       </div>
@@ -41,12 +29,12 @@ export default function Page() {
         title="distal video"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-        className="h-[200px] w-full shadow-lg md:h-[432px]"
+        className="aspect-video w-full"
       ></iframe>
 
-      <section className="space-y-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">Overview</h2>
-        <p className="text-left leading-relaxed">
+      <section className="space-y-5">
+        <h2 className="text-xl font-bold">Overview</h2>
+        <p className="text-left">
           Vision-language-action models (VLAs) have transformed the field of
           robotic manipulation in recent years by combining the semantic
           understanding of LLMs with the precise control of flow-matching
@@ -73,9 +61,9 @@ export default function Page() {
         />
       </section>
 
-      <section className="space-y-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">Method</h2>
-        <p className="text-left leading-relaxed">
+      <section className="space-y-5">
+        <h2 className="text-xl font-bold">Method</h2>
+        <p className="text-left">
           The advantage-conditioning pipeline that DistAL builds on trains a
           value function on deployment trajectories annotated with per-timestep
           rewards, computes the advantage at each timestep, thresholds it into a
@@ -90,7 +78,7 @@ export default function Page() {
           and training procedure left unchanged, isolating reward design as the
           single variable.
         </p>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>kNN feature-distance reward.</b> DistAL is motivated by the idea
           that failure trajectories will be out-of-distribution when compared to
           a reference dataset of successes. We build an index of embeddings over
@@ -111,10 +99,10 @@ export default function Page() {
           alt="DistAL architecture"
           width={3130}
           height={1421}
-          className="mx-auto w-full shadow-lg md:w-3/4"
+          className="mx-auto w-full md:w-3/4"
           caption="Figure 2: DistAL architecture. The value function is trained on deployment data using the kNN feature-distance reward, and the resulting advantage label is injected into the VLA via classifier-free guidance."
         />
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>Architecture and training.</b> The value function consists of a
           pre-trained Gemma3 270M language model and a 400M SigLIP vision
           encoder, receiving the same image, language and state conditioning
@@ -133,9 +121,9 @@ export default function Page() {
         </p>
       </section>
 
-      <section className="space-y-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">Results</h2>
-        <p className="text-left leading-relaxed">
+      <section className="space-y-5">
+        <h2 className="text-xl font-bold">Results</h2>
+        <p className="text-left">
           <b>OOD detection as a failure predictor.</b> We first ask which metric
           best predicts task success, collecting rollouts from the base π
           <sub>0.5</sub> policy on LIBERO, LIBERO-plus and two bi-manual
@@ -154,10 +142,10 @@ export default function Page() {
           alt="Per-step rewards along successful and failed rollouts"
           width={3000}
           height={900}
-          className="mx-auto w-full shadow-lg"
+          className="mx-auto w-full"
           caption="Figure 3: Per-step rewards along a successful and a failed rollout of the same task, averaged over 10 random episodes of each and min-max normalised per method. The kNN score separates the two outcomes far more cleanly than the other embedding-based detectors, which repeatedly cross over."
         />
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>Simulation.</b> We evaluate on LIBERO-10 and LIBERO-plus against
           the base π<sub>0.5</sub>, SFT on success-filtered deployment data, and
           a RECAP-style binary reward with the identical pipeline. DistAL is the
@@ -168,7 +156,7 @@ export default function Page() {
           the binary-reward baseline, DistAL wins on 5 of the 8 columns, with
           its largest individual gains on Camera (+4.8) and Texture (+7.7).
         </p>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>Hardware.</b> We use a bi-manual setup of two Piper arms on two
           contact-rich tasks: <i>remove pen lid</i> and{" "}
           <i>remove ethernet cable</i>. On the ethernet task, DistAL reaches 87%
@@ -186,7 +174,7 @@ export default function Page() {
           alt="Keyframes of the two bi-manual tasks"
           width={2400}
           height={627}
-          className="mx-auto w-full shadow-lg"
+          className="mx-auto w-full"
           caption="Figure 4: Keyframes of the two bi-manual Piper tasks: remove pen lid (top) and remove ethernet cable (bottom)."
         />
         <Figure
@@ -194,10 +182,10 @@ export default function Page() {
           alt="Hardware success rates"
           width={3447}
           height={2045}
-          className="mx-auto w-full shadow-lg md:w-3/4"
+          className="mx-auto w-full md:w-3/4"
           caption="Figure 5: Success rate on the two bi-manual tasks, averaged over 50 rollouts per task."
         />
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           In summary, DistAL replaces the sparse success/failure reward in
           advantage-conditioned VLA fine-tuning with a dense per-step reward
           based on the k-nearest-neighbours distance to the base VLA&apos;s

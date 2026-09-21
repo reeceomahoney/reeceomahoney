@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="mx-4 mt-12 mb-24 max-w-3xl space-y-12 px-4 text-center md:mx-auto md:px-0">
+    <div className="mt-4 space-y-10 text-center">
       <div>
-        <h1 className="mb-4 text-4xl font-bold md:text-6xl">
+        <h1 className="mb-3 text-2xl font-bold md:text-3xl">
           DetAug: Obstacle-Blind Trajectory Augmentation for Zero-shot Obstacle
           Avoidance
         </h1>
-        <p className="mb-2 text-lg md:text-xl">
+        <p className="mb-1">
           Reece O&apos;Mahoney<sup>1</sup>, Moritz Zoellner<sup>2</sup>, Ioannis
           Havoutis<sup>1</sup>
         </p>
@@ -27,18 +27,8 @@ export default function Page() {
       </div>
 
       <div className="flex justify-center gap-4">
-        <LinkButton
-          href="https://arxiv.org/abs/2609.18395"
-          icon="/icons/arxiv.svg"
-          iconAlt="arXiv logo"
-        >
-          Paper
-        </LinkButton>
-        <LinkButton
-          href="https://github.com/reeceomahoney/detaug"
-          icon="/icons/github.svg"
-          iconAlt="GitHub logo"
-        >
+        <LinkButton href="https://arxiv.org/abs/2609.18395">Paper</LinkButton>
+        <LinkButton href="https://github.com/reeceomahoney/detaug">
           Code
         </LinkButton>
       </div>
@@ -48,12 +38,12 @@ export default function Page() {
         title="detaug video"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-        className="h-[200px] w-full shadow-lg md:h-[432px]"
+        className="aspect-video w-full"
       ></iframe>
 
-      <section className="space-y-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">Overview</h2>
-        <p className="text-left leading-relaxed">
+      <section className="space-y-5">
+        <h2 className="text-xl font-bold">Overview</h2>
+        <p className="text-left">
           Policies for robotic manipulation are produced by training on large
           teleoperated datasets. These datasets typically consist of free-space
           trajectories, making them difficult to transfer to test-time
@@ -80,13 +70,13 @@ export default function Page() {
           alt="DetAug on hardware avoiding an unseen obstacle"
           width={720}
           height={707}
-          className="mx-auto w-full shadow-lg md:w-2/3"
+          className="mx-auto w-full md:w-2/3"
           caption="Figure 1: DetAug on hardware. A policy trained only on free-space demos augmented with random detours avoids an obstacle never seen in training. At each replan, a batch of detours (grey) is sampled from the label space and the collision-free candidate (blue) is executed."
         />
       </section>
 
-      <section className="space-y-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">Method</h2>
+      <section className="space-y-5">
+        <h2 className="text-xl font-bold">Method</h2>
         <Figure
           src="/publications/detaug/overview.png"
           alt="Overview of DetAug"
@@ -94,7 +84,7 @@ export default function Page() {
           height={652}
           caption="Figure 2: Overview of DetAug. (a) Transit phases of free-space demos are replaced with random arcs, keeping grasp and release intact; the arc parameters form a low-dimensional label. (b) The label is injected into a flow-matching policy via AdaLN-Zero. (c) At inference, K labels are sampled, each yields a trajectory, and the lowest collision-cost candidate (blue) is executed."
         />
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           DetAug (Detour Augmentation) starts from a dataset of free-space
           teleoperated demonstrations and augments them with randomly generated
           arcs, recording the augmentation parameters as a conditioning
@@ -107,7 +97,7 @@ export default function Page() {
           in the prior, and augmentation methods assume the obstacles are known.
           DetAug assumes neither.
         </p>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>Detour augmentation.</b> Demonstrations are first split into
           interaction and transit phases. Interaction phases are a fixed window
           around each gripper transition, and transit phases are the motion
@@ -131,7 +121,7 @@ export default function Page() {
           height={1050}
           caption="Figure 3: Example detour augmentations. Each panel shows an original end-effector demonstration and several augmented variants, with the approach and carry phases replaced by arcs of varying half-angle φ and plane rotation θ, while the grasp and release windows are left unchanged."
         />
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>Architecture.</b> The policy is a DiT-style transformer trained
           with a conditional flow matching loss. It outputs a chunk of states
           and actions and replans every few action steps, like a standard action
@@ -140,7 +130,7 @@ export default function Page() {
           is injected through AdaLN-Zero conditioning. This also makes it easy
           to graft the augmentation label onto an existing pre-trained policy.
         </p>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>Inference-time selection.</b> At inference a batch of K labels is
           sampled uniformly from within the training support, and a trajectory
           is generated for each, conditioned on the current observation. This is
@@ -156,9 +146,9 @@ export default function Page() {
         </p>
       </section>
 
-      <section className="space-y-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">Results</h2>
-        <p className="text-left leading-relaxed">
+      <section className="space-y-5">
+        <h2 className="text-xl font-bold">Results</h2>
+        <p className="text-left">
           <b>SafeLIBERO benchmark.</b> We evaluate on the simulated SafeLIBERO
           benchmark, where the training data is the standard LIBERO scenes but
           random obstacles are inserted at test time. Baselines are DemoGen (a
@@ -220,7 +210,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>Selection vs guidance.</b> To compare selection over the label
           space against guidance, we train the policy with the label randomly
           dropped out for a null token so that the same collision cost can be
@@ -239,7 +229,7 @@ export default function Page() {
             alt="Selection vs guidance results"
             width={1650}
             height={1200}
-            className="mx-auto w-full shadow-lg"
+            className="mx-auto w-full"
             caption="Figure 4: Collision-free success on the SafeLIBERO spatial suite for DetAug's label selection against guidance and mixed variants."
           />
           <Figure
@@ -247,11 +237,11 @@ export default function Page() {
             alt="Effect of the number of sampled labels"
             width={1650}
             height={950}
-            className="mx-auto w-full shadow-lg"
+            className="mx-auto w-full"
             caption="Figure 5: Collision-free success as the number of sampled labels K varies, for random and zero-valued labels."
           />
         </div>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>Adapting a pre-trained policy.</b> To add obstacle avoidance to an
           existing policy, we adapt a base policy trained on the unaugmented
           dataset via AdaLN, injecting either the augmentation label (DetAug) or
@@ -266,10 +256,10 @@ export default function Page() {
           alt="Fine-tuning results"
           width={1650}
           height={1500}
-          className="mx-auto w-full shadow-lg md:w-2/3"
+          className="mx-auto w-full md:w-2/3"
           caption="Figure 6: Success and collision rates over fine-tuning steps when adapting a pre-trained base policy with DetAug and DemoGen, training either the AdaLN adapter only or the full policy."
         />
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           <b>Hardware.</b> We train a policy on a pick-and-place task from
           free-space demonstrations, then roll out each method with four
           obstacles of different shapes placed at random positions, 10 rollouts
@@ -287,10 +277,10 @@ export default function Page() {
           alt="Hardware experiments"
           width={1945}
           height={493}
-          className="mx-auto w-full shadow-lg"
+          className="mx-auto w-full"
           caption="Figure 7: DetAug rollouts on the pick-and-place task with the four test-time obstacles: cups, tube, jar and rack. The policy was trained on free-space demos only."
         />
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           In summary, DetAug adapts manipulation policies with zero-shot
           obstacle avoidance without any knowledge of the test-time environment
           during training. It significantly outperforms prior methods on a broad

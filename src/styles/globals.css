@@ -4,8 +4,48 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #666666;
+  --link: #1a5fb4;
+  --rule: #e4e4e4;
+  --pill: #e3f2fd;
+  --pill-fg: #0b3a6b;
+}
+
+.dark {
+  --bg: #121212;
+  --fg: #e8e8e8;
+  --muted: #8f8f8f;
+  --link: #8ab4f8;
+  --rule: #2c2c2c;
+  --pill: #1e3a5f;
+  --pill-fg: #cfe2ff;
+}
+
 @theme inline {
   --font-sans:
-    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    var(--font-lato), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-link: var(--link);
+  --color-rule: var(--rule);
+  --color-pill: var(--pill);
+  --color-pill-fg: var(--pill-fg);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+  }
+  a {
+    color: var(--color-link);
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }

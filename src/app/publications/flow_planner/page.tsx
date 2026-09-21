@@ -1,3 +1,4 @@
+import { LinkButton } from "@/components/paper/link-button";
 import Image from "next/image";
 
 export const metadata = {
@@ -7,56 +8,33 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="mx-4 mt-12 mb-24 max-w-3xl space-y-12 px-4 text-center md:mx-auto md:px-0">
+    <div className="mt-4 space-y-10 text-center">
       <div>
-        <h1 className="mb-4 text-4xl font-bold md:text-6xl">
+        <h1 className="mb-3 text-2xl font-bold md:text-3xl">
           Improving Trajectory Stitching with Flow Models
         </h1>
-        <p className="mb-2 text-lg md:text-xl">
+        <p className="mb-1">
           Reece O&apos;Mahoney, Wanming Yu, Ioannis Havoutis
         </p>
         <p>Oxford Robotics Institute, University of Oxford</p>
       </div>
 
       <div className="flex justify-center gap-4">
-        <button className="rounded-3xl bg-gray-800 px-4 py-2 text-white hover:bg-gray-700 md:px-6">
-          <a
-            href="https://arxiv.org/abs/2505.07802"
-            className="flex items-center gap-2"
-          >
-            <Image
-              src="/icons/arxiv.svg"
-              alt="ArXiv logo"
-              width={24}
-              height={24}
-            />
-            Paper
-          </a>
-        </button>
-        <button className="rounded-3xl bg-gray-800 px-4 py-2 text-white hover:bg-gray-700 md:px-6">
-          <a
-            href="https://github.com/reeceomahoney/flow-planning"
-            className="flex items-center gap-2"
-          >
-            <Image
-              src="/icons/github.svg"
-              alt="GitHub logo"
-              width={24}
-              height={24}
-            />
-            Code
-          </a>
-        </button>
+        <LinkButton href="https://arxiv.org/abs/2505.07802">Paper</LinkButton>
+        <LinkButton href="https://github.com/reeceomahoney/flow-planning">
+          Code
+        </LinkButton>
       </div>
 
       <iframe
         src="https://www.youtube.com/embed/v_vLEPF8ZuU"
-        className="h-[200px] w-full shadow-lg md:h-[432px]"
+        title="Project video"
+        className="aspect-video w-full"
       ></iframe>
 
-      <section className="space-y-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">Overview</h2>
-        <p className="text-left leading-relaxed">
+      <section className="space-y-5">
+        <h2 className="text-xl font-bold">Overview</h2>
+        <p className="text-left">
           Generative models have shown great promise as trajectory planners,
           given their affinity to modeling complex distributions and guidable
           inference process. Previous works have successfully applied these in
@@ -75,15 +53,15 @@ export default function Page() {
         </p>
       </section>
 
-      <section className="space-y-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">Flow Planner</h2>
+      <section className="space-y-5">
+        <h2 className="text-xl font-bold">Flow Planner</h2>
         <figure>
           <Image
             src="/publications/flow_planner/overview.png"
             alt="Stitching results"
             width={800}
             height={600}
-            className="mx-auto w-full shadow-lg md:w-11/12"
+            className="mx-auto w-full md:w-11/12"
           />
           <figcaption className="pt-2">
             Figure 1: Overview: We use a flow model with three key components: a
@@ -94,7 +72,7 @@ export default function Page() {
             than previous methods.
           </figcaption>
         </figure>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           We propose three improvements to fix stitching. Firstly, we identify
           that a model architecture with what we call a “local receptive field”
           is required to avoid exposing global information. Our experiments show
@@ -103,14 +81,14 @@ export default function Page() {
           field instead drives the model to only optimize for local consistency
           and thus allows for a more flexible global structure.
         </p>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           Secondly, we found that action noise addition was crucial to allowing
           the model to “jump” between existing clips at points where they
           overlap. This was uniquely effective when compared to other dataset
           augmentation schemes, which we hypothesise is due to the breaking of
           the correlation between the joint states.
         </p>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           Lastly, to both prevent mode collapse, and reduce dynamics
           inconsistencies, we apply a technique we call trajectory splitting,
           which differs based on when it is applied. At training time, this
@@ -121,8 +99,8 @@ export default function Page() {
         </p>
       </section>
 
-      <section className="space-y-8">
-        <h2 className="text-3xl font-semibold md:text-4xl">Results</h2>
+      <section className="space-y-5">
+        <h2 className="text-xl font-bold">Results</h2>
         <p className="text-left">
           Using the combination of these techniques we create a method called
           Flow Planner and compare it to previous approaches in two ways.
@@ -140,7 +118,7 @@ export default function Page() {
             alt="Stitching results"
             width={800}
             height={600}
-            className="mx-auto w-full shadow-lg md:w-11/12"
+            className="mx-auto w-full md:w-11/12"
           />
           <figcaption className="pt-2">
             Table 1: Effects of architecture choice on stitching error
@@ -152,13 +130,13 @@ export default function Page() {
             alt="Stitching results"
             width={800}
             height={600}
-            className="mx-auto w-full shadow-lg md:w-11/12"
+            className="mx-auto w-full md:w-11/12"
           />
           <figcaption className="pt-2">
             Table 2: Effects of Dataset augmentation on stitching error
           </figcaption>
         </figure>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           Secondly, we apply it to an obstacle avoidance problem where no single
           trajectory is a complete solution, hence also requiring stitching.
           Flow planner is able to both plan more successfully, and avoid much
@@ -171,7 +149,7 @@ export default function Page() {
             alt="Guided planning results"
             width={800}
             height={600}
-            className="mx-auto w-full shadow-lg md:w-11/12"
+            className="mx-auto w-full md:w-11/12"
           />
           <figcaption className="pt-2">
             Figure 2: Performance benchmark in an obstacle avoidance task on a
@@ -180,7 +158,7 @@ export default function Page() {
             method was able to reliably avoid.
           </figcaption>
         </figure>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           We lastly demonstrate our methods generalisability by deploying it
           onto real hardware.
         </p>
@@ -190,14 +168,14 @@ export default function Page() {
             alt="Stitching results"
             width={800}
             height={600}
-            className="mx-auto w-full shadow-lg md:w-11/12"
+            className="mx-auto w-full md:w-11/12"
           />
           <figcaption className="pt-2">
             Figure 3: Hardware deployment, the top row shows an unguided plan
             and the bottom a guided one.
           </figcaption>
         </figure>
-        <p className="text-left leading-relaxed">
+        <p className="text-left">
           In conclusion, we present a novel, flow matching based planner for
           robotic manipulation that, through superior stitching abilities, is
           able to plan more flexibly, and robustly than previous methods.
