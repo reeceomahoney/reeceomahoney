@@ -58,7 +58,8 @@ export default function HomePage() {
           <nav className="mb-2 text-sm">
             <a href="https://github.com/reeceomahoney">GitHub</a> |{" "}
             <a href="https://www.linkedin.com/in/reece-omahoney/">LinkedIn</a> |{" "}
-            <a href="mailto:reeceo@robots.ox.ac.uk">Email</a>
+            <a href="mailto:reece.omahoney3@gmail.com">Email</a> |{" "}
+            <a href="/cv.pdf">CV</a>
           </nav>
           <p>
             I am Head of AI at a stealth-mode startup and a final-year PhD
@@ -66,9 +67,9 @@ export default function HomePage() {
             <a href="https://ori.ox.ac.uk/">Oxford Robotics Institute</a>,
             University of Oxford. My thesis is on applying diffusion models to
             robotic control. Previously I was a machine learning engineer at{" "}
-            Kinisi Robotics, did freelance
-            full-stack development, and read Engineering Science at Oxford. I am
-            currently trying to improve my handstands and my chess rating.
+            Kinisi Robotics, did freelance full-stack development, and read
+            Engineering Science at Oxford. I am currently trying to improve my
+            handstands and my chess rating.
           </p>
         </div>
       </section>

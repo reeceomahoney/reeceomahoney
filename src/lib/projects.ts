@@ -7,6 +7,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "LeRobot | Hugging Face",
+    description:
+      "Open-source contributor to Hugging Face's PyTorch library for robotics, with merged PRs across datasets, environments, and policy configuration",
+    href: "https://github.com/huggingface/lerobot/pulls?q=is%3Apr+author%3Areeceomahoney",
+    image: "/projects/lerobot.png",
+  },
+  {
     title: "SLURM Tools",
     description:
       "CLI for submitting SLURM jobs over SSH and a web GUI for monitoring them across clusters",
